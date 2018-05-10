@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/1.0.2/css/froala_blocks.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+      <link href="css/updatedStyle.css" rel="stylesheet" type="text/css">
+
+  <style type="text/css">
+ 
+
+  .iPhone {
+    background: #fff;
+    border: solid 2px #fff;
+    height: 500px;
+    width: 260px;
+    border-radius: 30px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.25);
+    @include transition(all .4s $ease-in-circ);
+  }
+  .iPhoneInner {
+    background: #fff;
+    border: solid 2px #b4b4b4;
+    height: 496px;
+    width: 256px;
+    border-radius: 30px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
+    @include transition(all .4s $ease-in-circ);
+    .circButton {
+      background: #fff;
+      border: solid 2px #3b3b3b;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      margin: 0 auto;
+      border-radius: 50%;
+      top: 48px;
+      cursor: pointer;
+    }
+    .smallTopCirc {
+      @include linear-gradient(#1f1f1f, #141414);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      top: 6px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .camera {
+      @include linear-gradient(#1f1f1f, #141414);
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: solid 1px $color-silver;
+      top: 17px;
+      left: 85px;
+    }
+    .oval {
+      @include linear-gradient(#1f1f1f, #141414);
+      width: 50px;
+      height: 4px;
+      top: 14px;
+      border-radius: 2px;
+      margin: 0 auto;
+      margin-bottom: -12px;
+      position: relative;
+    }
+  }
+  .iScreen {
+    position: relative;
+    width: 230px;
+    height: 400px;
+    margin: 0 auto;
+    top: 40px;
+    overflow: hidden;
+    @include linear-gradient(#1f1f1f, #141414);
+    border: solid 2px #3b3b3b;@include transition(all .4s $ease-in-circ);
+    .usman {
+      opacity: 0;
+      img {
+        display: block;
+        max-width: 140px;
+        margin: 0 auto;
+        top: 120px;
+        position: relative;
+        @include transition(all .6s);
+      }
+      .center {
+       display: block;
+       max-width: 140px;
+       margin: 0 auto;
+       right: 130px;
+       top: 0;
+       transition-delay: 2s;
+       @include transition(all .6s);
+       position: relative;
+     }
+   }
+   .showMe {
+     @include transition(all .4s $ease-in-circ);
+     opacity: 1;
+   }
+ }
+ .turnOn {
+  @include transition(all .4s $ease-in-circ);
+  background: $color-pink;
+  border: solid 2px #d1d1d1;
+}
+.rotate {
+  @include transform(rotate(90deg));
+}
+.rotateBack {
+  @include transform(rotate(-90deg));
+}
+.noShad {
+  box-shadow: none;
+}
+
+.flip {
+  width: 260px;
+  max-width: 100%;
+  right: 0;
+  top: 0;
+  text-align: center;
+  display: block;
+  position: absolute;
+  background: $color-pink;
+  margin-bottom: 40px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: $font-curve;
+  cursor: pointer;
+  font-size: 2em;
+  top: 10px;
+  right: 10px;
+  border: solid 2px $color-snow;
+}
+.iphoneImg {
+  max-width: -webkit-fill-available;
+}
+.css-mb {
+  max-width: 650px; /* Set the desired maximum width of the macbook */
+  min-width: 50px; /* Set the desired minimum width of the macbook */
+  margin: 50px auto 0; /* Align mockup to center */
+}
+
+.css-mb div {
+  box-sizing: border-box !important; /* Just in case */
+}
+
+/* Center the display */
+.css-mb .mb-display-position {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* The display */
+.css-mb .mb-display {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 65.9442%;
+  background: #373435;
+  
+  -webkit-border-top-left-radius:  3.5% 5.3075%;
+  -moz-border-radius-topleft:  3.5% 5.3075%;
+  border-top-left-radius:  3.5% 5.3075%;
+  
+  -webkit-border-top-right-radius: 3.5% 5.3075%;
+  -moz-border-radius-toptight: 3.5% 5.3075%;
+  border-top-right-radius: 3.5% 5.3075%;
+}
+
+/* Webcam */
+/* Browser may not render a perfect circle */
+.css-mb .mb-display:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  width: 1%;
+  height: 1.5164%;
+  margin-left: -0.5%;
+  border-radius: 50%;
+  background: #525252;
+}
+
+/* Glare */
+/* Browser may not render the top and right offset evenly */
+.css-mb .mb-display:after {
+  content: '';
+  display: none;
+  position: absolute;
+  right: 0.4%;
+  top: 0.64%; 
+  width: 62.5%;
+  height: 100%;
+  
+  background: none; /* Hide the gradient on older browsers */
+  background:    -moz-linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* FF3.6+ */
+  background: -webkit-linear-gradient(36deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* Chrome10+ and Safari5.1+ compute the degree differently */
+  background:      -o-linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* Opera 11.10+ */
+  background:     -ms-linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* IE10+ */
+  background:         linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%);
+  
+  -webkit-border-top-right-radius: 5.3075%;
+  -moz-border-radius-toptight: 5.3075%;
+  border-top-right-radius: 5.3075%;
+}
+
+/* Only show glare, if the class is applied */
+.css-mb.with-glare .mb-display:after { display: block; }
+
+/* Position the screen and give make it the right size, ratio 16:10 */
+.css-mb .mb-screen-position {
+  position: absolute;
+  top: 6.5%;
+  width: 93.2%;
+  left: 3.4%;
+  height: 0;
+  margin: 0;
+  padding-bottom: 58.25%; /* Ratio */
+}
+
+/* Give parent (this element) a "height", so that child elements can use height: 100%;*/
+.css-mb .mb-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: #4b4b4d; /* bg color if content is not big enough, or rendering is off */
+}
+
+/* Image on the screen */
+.css-mb .mb-screen img {
+  max-width: 100%;
+  height: auto;
+}
+#lociDemo {
+  height: auto;
+  max-width: fit-content ;
+
+}
+
+/* Iframe on the screen */
+.css-mb .mb-screen iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Macbook body */
+.css-mb .mb-body {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 2.3%;
+  background: #e6e7e8;
+}
+
+/* The groove */
+.css-mb .mb-body:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 14.0740%;
+  height: 0;
+  padding-bottom: 1.4814%;
+  margin-left: -7.037%;
+  background: #a9abae;
+  
+  -webkit-border-bottom-left-radius:  7.0370% 50%;
+  -moz-border-radius-bottomleft:  7.0370% 50%;
+  border-bottom-left-radius:  7.0370% 50%;
+  
+  -webkit-border-bottom-right-radius: 7.0370% 50%;
+  -moz-border-radius-bottomtight: 7.0370% 50%;
+  border-bottom-right-radius: 7.0370% 50%;  
+}
+.navbarcontainer {
+                    margin-right: auto
+                  }
+/* Macbook bottom */
+.css-mb .mb-bottom-cover {
+  width: 100%;
+  height: 0;
+  padding-bottom: 0.7407%;
+  background: #a9abae;
+  
+  -webkit-border-bottom-left-radius:  12% 600%;
+  -moz-border-radius-bottomleft:  12% 600%;
+  border-bottom-left-radius:  12% 600%;
+  
+  -webkit-border-bottom-right-radius: 12% 600%;
+  -moz-border-radius-bottomtight: 12% 600%;
+  border-bottom-right-radius: 12% 600%; 
+}
+@media (max-width: 767px){
+.navbar {
+                position: fixed !important;
+                left: 0px !important;
+                -webkit-box-pack: inherit !important;
+                display:-webkit-box!important;
+                top: 0px;
+                right: 0px;
+                float: none;
+                clear: none;
+                background-color: rgba(255, 64, 64, 0);
+                opacity: 1;
+                -webkit-transition: opacity 200ms ease;
+                transition: opacity 200ms ease;
+            }}
+            @media (max-width: 991px){
+                .navbarcontainer {
+                    float: left
+                }}
+</style>
+</head>
+<body>
+  <div class="navbar w-nav" data-animation="over-left" data-collapse="medium" data-contain="1" data-duration="400">
+                <div class="navbarcontainer w-container">
+                    <nav class="navbarleft w-nav-menu" role="navigation">
+                        <a class="navlink w-nav-link" href="./index.html">Home</a>
+                        <a class="navlink w-nav-link" href="https://medium.com/@meirsnyder">Blog</a>
+                        <a class="navlink w-nav-link w--current" href="./consulting.html">Consulting</a>
+                <!--<div class="dropdown w-dropdown" data-delay="100" data-hover="1">
+                    <div class="navlink w-dropdown-toggle">
+                        <div class="dropdowntext">Work</div>
+                        <div class="dropdownicon w-icon-dropdown-toggle"></div>
+                    </div>
+                    <nav class="dropdownlist w-dropdown-list">
+                        <div class="dropdownnavdiv">
+                            <a class="dropdownnav w-dropdown-link" href="http://sparkumd.thisistap.com/">Consulting</a>
+                            <a class="dropdownbottom dropdownnav w-dropdown-link" href="/work/orwuu">Orwuu</a>
+                        </div>
+                    </nav>
+                </div>
+            -->
+            <a class="navlink w-nav-link" href="mailto:meir@codeglomerate.com">Contact</a>
+        </nav>
+        <div class="navbutton w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+        </div>
+    </div>
+</div>
+  <section class="fdb-block pb-md-0" data-block-type="features" data-id="1" draggable="true">
+    <div class="container">
+      <div class="row justify-content-center pb-xl-5">
+        <div class="col-12 col-md-8 text-center">
+          <h1>Case Studies</h1>
+          <p class="text-h3">Behind every good company is a good story, these are some of the highlights</p>
+        </div>
+      </div>
+
+      <div class="row text-right align-items-center-lg align-items-end pt-5">
+       <div style="margin: 0 auto;" class="iPhone">
+        <div class="iPhoneInner">
+          <div class="camera"></div>
+          <div class="smallTopCirc"></div>
+          <div class="oval"></div>
+          <div class="iScreen">
+            <div class="usman">
+              <img class="iphoneImg" src="images/New Stoke.gif" />
+            </div>
+          </div>
+          <div class="circButton"></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-7 col-lg-6 col-xl-5 m-auto text-left pt-5 pt-md-0">
+        <h1>Consumer Mobile Apps</h1>
+        <h3><strong>Stoke IOS</strong></h3>
+        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences.</p>
+
+        <h3 class="mt-4 mt-xl-5"><strong>Feature Two</strong></h3>
+        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, there live the blind texts.</p>
+
+        <h3 class="mt-4 mt-xl-5"><strong>Feature Three</strong></h3>
+        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="fdb-block" data-block-type="features" data-id="2" draggable="true">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6 col-xl-5">
+        <h1>Small Business branding and website</h1>
+        <p class="text-h3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+
+        <div class="row pt-4 pt-xl-5">
+          <div class="col-12 col-md-5">
+            <h4><strong>Feature One</strong></h4>
+            <p>A small river named Duden flows</p>
+          </div>
+          <div class="col-12 col-md-5 m-auto pt-3 pt-md-0">
+            <h4><strong>Feature Two</strong></h4>
+            <p>Separated they live in Bookmarksgrove</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 col-lg-6 m-auto mr-lg-0 ml-lg-auto pt-5 pt-lg-0">
+        <div class="css-mb with-glare">
+          <div class="mb-display-position">
+            <div class="mb-display">
+              <div class="mb-screen-position">
+                <div class="mb-screen">
+
+                  <!-- Image (aspect 16:10 recommended, but not required). You might also want to change or remove the background color, in case the picture is not big enough, or rendering is off  -->
+                  <img src="./images/apluspromo3.jpeg" alt="example image" />
+                  <!-- Image By André Freitas from unsplash.com -->
+
+                  <!-- Youtube - don't forget to remove glare -->
+                  <!-- <iframe width="960" height="480" src="https://www.youtube.com/embed/GUEZCxBcM78?rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=2" frameborder="0"></iframe> -->
+                  <!-- Notice: Youtube has some toruble with embed players and gives consol errors -->
+
+                  <!-- Iframe, simple website - don't forget to remove glare -->
+                  <!-- <iframe src="http://example.com" frameborder="0"></iframe> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-body"></div>
+          <div class="mb-bottom-cover"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="fdb-block" data-block-type="features" data-id="3" draggable="true">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-8 col-lg-6 m-md-auto ml-lg-0 mr-lg-auto">
+        <div class="css-mb with-glare">
+          <div class="mb-display-position">
+            <div class="mb-display">
+              <div class="mb-screen-position">
+                <div class="mb-screen">
+
+                  <!-- Image (aspect 16:10 recommended, but not required). You might also want to change or remove the background color, in case the picture is not big enough, or rendering is off  -->
+                  <img id="lociDemo" src="./images/loci.gif" alt="example image" />
+                  <!-- Image By André Freitas from unsplash.com -->
+
+                  <!-- Youtube - don't forget to remove glare -->
+                  <!-- <iframe width="960" height="480" src="https://www.youtube.com/embed/GUEZCxBcM78?rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=2" frameborder="0"></iframe> -->
+                  <!-- Notice: Youtube has some toruble with embed players and gives consol errors -->
+
+                  <!-- Iframe, simple website - don't forget to remove glare -->
+                  <!-- <iframe src="http://example.com" frameborder="0"></iframe> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-body"></div>
+          <div class="mb-bottom-cover"></div>
+        </div>      </div>
+        <div class="col-12 col-lg-6 col-xl-5 ml-sm-auto pt-5 pt-lg-0">
+          <h1>Virtual Reality & User Interface</h1>
+
+          <div class="row pt-4 pt-xl-5">
+            <div class="col-12 col-sm-6 col-xl-5">
+              <h4><strong>Feature One</strong></h4>
+              <p>Far far away, behind the word mountains</p>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-5 m-auto pt-3 pt-sm-0">
+              <h4><strong>Feature Two</strong></h4>
+              <p>Separated they live in Bookmarksgrove</p>
+            </div>
+          </div>
+
+          <div class="row pt-3">
+            <div class="col-12 col-sm-6 col-xl-5">
+              <h4><strong>Feature Three</strong></h4>
+              <p>A small river named Duden flows by me</p>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-5 m-auto pt-3 pt-sm-0">
+              <h4><strong>Feature Four</strong></h4>
+              <p>Separated they live in Bookmarksgrove</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="fdb-block pb-0" data-block-type="features" data-id="4" draggable="true">
+    <div class="container">
+      <div class="row text-right align-items-center">
+        <div class="col-12 col-lg-6 col-xl-5 m-lg-auto text-left">
+          <h1>Mobile Business Application</h1>
+          <p class="text-h3 pb-xl-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+
+          <div class="row pt-5">
+            <div class="col-3">
+              <img alt="image" class="img-fluid" src="https://editor-latest.s3.amazonaws.com/design-blocks/block_images/img_round.svg">
+            </div>
+            <div class="col-9">
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences.</p>
+            </div>
+          </div>
+
+          <div class="row pt-5">
+            <div class="col-9 text-right">
+              <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, there live the blind texts.</p>
+            </div>
+
+            <div class="col-3">
+              <img alt="image" class="img-fluid" src="https://editor-latest.s3.amazonaws.com/design-blocks/block_images/img_round.svg">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-7 col-sm-4 m-auto pt-5 pt-md-0">
+         <div style="margin: 0 auto;" class="iPhone">
+          <div class="iPhoneInner">
+            <div class="camera"></div>
+            <div class="smallTopCirc"></div>
+            <div class="oval"></div>
+            <div class="iScreen">
+              <div class="usman">
+                <img class="iphoneImg" src="images/controlledC.gif" />
+              </div>
+            </div>
+            <div class="circButton"></div>
+          </div>
+        </div>      </div>
+      </div>
+    </div>
+  </section>
+  <section class="fdb-block bg-dark fp-active" style="background-image: url(https://editor-latest.s3.amazonaws.com/design-blocks/block_images/bg_4.svg)" data-block-type="testimonials" data-id="5" draggable="true">
+    <div class="container">
+      <div class="row text-center justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <h1>Testimonials</h1>
+          <p class="text-h3">A small river named Duden flows by their place and supplies it with the necessary regelialia. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
+        </div>
+      </div>
+
+      <div class="row mt-5 align-items-center justify-content-center">
+        <div class="col-md-8 col-lg-4">
+          <div class="fdb-box">
+            <div class="row no-gutters align-items-center">
+              <div class="col-3">
+                <img alt="image" class="img-fluid" src="./images/YukiPic.jpeg">
+              </div>
+              <div class="col-8 ml-auto">
+                <p>
+                  <strong>Yuki Konda</strong><br>
+                  <em>Software Engineer</em>
+                </p>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <p class="text-h3">
+                  "I had the pleasure of working with Meir for the Stoke dating app. Meir was always responsible, timely, and passionate in the pursuit of our objectives of the app. Not only was he technically capable, he also provided valuable insights and suggestions to the direction of where the app should go and which users to go after. He also was very easy to talk to, and did his best to accommodate quick requests that needed backend support."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-lg-4 mt-4 mt-lg-0">
+          <div class="fdb-box">
+            <div class="row no-gutters align-items-center">
+              <div class="col-3">
+                <img alt="image" class="img-fluid" src="images/suwhaPic.jpeg">
+              </div>
+              <div class="col-8 ml-auto">
+                <p>
+                  <strong>Suwha Hong</strong><br>
+                  <em>CEO/Founder at Stoke</em>
+                </p>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <p class="text-h3">
+                  "I had the pleasure of working with and managing Meir on the Stoke app. Meir is extremely bright and consistently brings fresh, thoughtful ideas to the table. He is a very capable developer who is able to think and execute creatively and methodically. Meir is one of the most dynamic and intelligent people with whom I have had the chance to work."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-lg-4 mt-4 mt-lg-0">
+          <div class="fdb-box">
+            <div class="row no-gutters align-items-center">
+              <div class="col-3">
+                <img alt="image" class="img-fluid" src="./images/MarkPic.jpeg">
+              </div>
+              <div class="col-8 ml-auto">
+                <p>
+                  <strong>Mark Zhong</strong><br>
+                  <em>Senior iOS Developer & Entrepreneur</em>
+                </p>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <p class="text-h3">
+                  "Meir is a great software developer and have strong sense with product design and development. I had a great time working with him shoulder by shoulder in a dating app startup. I highly recommend him for your company in the future!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Profile Page - Now Ui Kit by Creative Tim</title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+        <!-- CSS Files -->
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="../assets/css/demo.css" rel="stylesheet" />
+        <style type="text/css">
+        .iPhone {
+        background: #fff;
+        border: solid 2px #fff;
+        height: 500px;
+        width: 260px;
+        border-radius: 30px;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.25);
+        @include transition(all .4s $ease-in-circ);
+        }
+        .iPhoneInner {
+        background: #fff;
+        border: solid 2px #b4b4b4;
+        height: 496px;
+        width: 256px;
+        border-radius: 30px;
+        position: relative;
+        margin: 0 auto;
+        box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
+        @include transition(all .4s $ease-in-circ);
+        .circButton {
+        background: #fff;
+        border: solid 2px #3b3b3b;
+        width: 36px;
+        height: 36px;
+        position: relative;
+        margin: 0 auto;
+        border-radius: 50%;
+        top: 48px;
+        cursor: pointer;
+        }
+        .smallTopCirc {
+        @include linear-gradient(#1f1f1f, #141414);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        top: 6px;
+        position: relative;
+        margin: 0 auto;
+        }
+        .camera {
+        @include linear-gradient(#1f1f1f, #141414);
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: solid 1px $color-silver;
+        top: 17px;
+        left: 85px;
+        }
+        .oval {
+        @include linear-gradient(#1f1f1f, #141414);
+        width: 50px;
+        height: 4px;
+        top: 14px;
+        border-radius: 2px;
+        margin: 0 auto;
+        margin-bottom: -12px;
+        position: relative;
+        }
+        }
+        .iScreen {
+        position: relative;
+        width: 230px;
+        height: 400px;
+        margin: 0 auto;
+        top: 40px;
+        overflow: hidden;
+        @include linear-gradient(#1f1f1f, #141414);
+        border: solid 2px #3b3b3b;@include transition(all .4s $ease-in-circ);
+        .usman {
+        opacity: 0;
+        img {
+        display: block;
+        max-width: 140px;
+        margin: 0 auto;
+        top: 120px;
+        position: relative;
+        @include transition(all .6s);
+        }
+        .center {
+        display: block;
+        max-width: 140px;
+        margin: 0 auto;
+        right: 130px;
+        top: 0;
+        transition-delay: 2s;
+        @include transition(all .6s);
+        position: relative;
+        }
+        }
+        .showMe {
+        @include transition(all .4s $ease-in-circ);
+        opacity: 1;
+        }
+        }
+        .turnOn {
+        @include transition(all .4s $ease-in-circ);
+        background: $color-pink;
+        border: solid 2px #d1d1d1;
+        }
+        .rotate {
+        @include transform(rotate(90deg));
+        }
+        .rotateBack {
+        @include transform(rotate(-90deg));
+        }
+        .noShad {
+        box-shadow: none;
+        }
+        .flip {
+        width: 260px;
+        max-width: 100%;
+        right: 0;
+        top: 0;
+        text-align: center;
+        display: block;
+        position: absolute;
+        background: $color-pink;
+        margin-bottom: 40px;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-family: $font-curve;
+        cursor: pointer;
+        font-size: 2em;
+        top: 10px;
+        right: 10px;
+        border: solid 2px $color-snow;
+        }
+        .iphoneImg {
+        max-width: -webkit-fill-available;
+        }
+        .css-mb {
+        max-width: 33vmax; /* Set the desired maximum width of the macbook */
+        width: 60vmin; /* Set the desired minimum width of the macbook */
+        margin: 50px auto 50px; /* Align mockup to center */
+        }
+        @media (max-width: 767px){
+        .css-mb {
+        max-width: 60vmax; /* Set the desired maximum width of the macbook */
+        width: 80vmin; /* Set the desired minimum width of the macbook */
+        margin: 50px auto 50px; /* Align mockup to center */
+        }}
+        .css-mb div {
+        box-sizing: border-box !important; /* Just in case */
+        }
+        /* Center the display */
+        .css-mb .mb-display-position {
+        width: 80%;
+        margin: 0 auto;
+        }
+        /* The display */
+        .css-mb .mb-display {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 65.9442%;
+        background: #373435;
+        
+        -webkit-border-top-left-radius:  3.5% 5.3075%;
+        -moz-border-radius-topleft:  3.5% 5.3075%;
+        border-top-left-radius:  3.5% 5.3075%;
+        
+        -webkit-border-top-right-radius: 3.5% 5.3075%;
+        -moz-border-radius-toptight: 3.5% 5.3075%;
+        border-top-right-radius: 3.5% 5.3075%;
+        }
+        /* Webcam */
+        /* Browser may not render a perfect circle */
+        .css-mb .mb-display:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        width: 1%;
+        height: 1.5164%;
+        margin-left: -0.5%;
+        border-radius: 50%;
+        background: #525252;
+        }
+        /* Glare */
+        /* Browser may not render the top and right offset evenly */
+        .css-mb .mb-display:after {
+        content: '';
+        display: none;
+        position: absolute;
+        right: 0.4%;
+        top: 0.64%;
+        width: 62.5%;
+        height: 100%;
+        
+        background: none; /* Hide the gradient on older browsers */
+        background:    -moz-linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* FF3.6+ */
+        background: -webkit-linear-gradient(36deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* Chrome10+ and Safari5.1+ compute the degree differently */
+        background:      -o-linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* Opera 11.10+ */
+        background:     -ms-linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%); /* IE10+ */
+        background:         linear-gradient(55deg, rgba(0,0,0,0) 61%, rgba(255,255,255,0.05) 61%);
+        
+        -webkit-border-top-right-radius: 5.3075%;
+        -moz-border-radius-toptight: 5.3075%;
+        border-top-right-radius: 5.3075%;
+        }
+        /* Only show glare, if the class is applied */
+        .css-mb.with-glare .mb-display:after { display: block; }
+        /* Position the screen and give make it the right size, ratio 16:10 */
+        .css-mb .mb-screen-position {
+        position: absolute;
+        top: 6.5%;
+        width: 93.2%;
+        left: 3.4%;
+        height: 0;
+        margin: 0;
+        padding-bottom: 58.25%; /* Ratio */
+        }
+        /* Give parent (this element) a "height", so that child elements can use height: 100%;*/
+        .css-mb .mb-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: #4b4b4d; /* bg color if content is not big enough, or rendering is off */
+        }
+        /* Image on the screen */
+        .css-mb .mb-screen img {
+        max-width: 100%;
+        height: auto;
+        }
+        #lociDemo {
+        height: auto;
+        max-width: fit-content ;
+        }
+        /* Iframe on the screen */
+        .css-mb .mb-screen iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        }
+        /* Macbook body */
+        .css-mb .mb-body {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 2.3%;
+        background: #e6e7e8;
+        }
+        /* The groove */
+        .css-mb .mb-body:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 14.0740%;
+        height: 0;
+        padding-bottom: 1.4814%;
+        margin-left: -7.037%;
+        background: #a9abae;
+        
+        -webkit-border-bottom-left-radius:  7.0370% 50%;
+        -moz-border-radius-bottomleft:  7.0370% 50%;
+        border-bottom-left-radius:  7.0370% 50%;
+        
+        -webkit-border-bottom-right-radius: 7.0370% 50%;
+        -moz-border-radius-bottomtight: 7.0370% 50%;
+        border-bottom-right-radius: 7.0370% 50%;
+        }
+        /*.navbarcontainer {
+        margin-right: auto
+        }*/
+        /* Macbook bottom */
+        .css-mb .mb-bottom-cover {
+        width: 100%;
+        height: 0;
+        padding-bottom: 0.7407%;
+        background: #a9abae;
+        
+        -webkit-border-bottom-left-radius:  12% 600%;
+        -moz-border-radius-bottomleft:  12% 600%;
+        border-bottom-left-radius:  12% 600%;
+        
+        -webkit-border-bottom-right-radius: 12% 600%;
+        -moz-border-radius-bottomtight: 12% 600%;
+        border-bottom-right-radius: 12% 600%;
+        }
+        .description, .card-description, .footer-big p {
+        color: #212121;
+        font-weight: 300;
+        }
+        .navbar {
+        position: fixed !important;
+        left: 0px !important;
+        -webkit-box-pack: inherit !important;
+        display: -webkit-box!important;
+        top: 0px;
+        right: 0px;
+        float: none;
+        clear: none;
+        background-color: rgba(255, 64, 64, 0);
+        opacity: 1;
+        -webkit-transition: opacity 200ms ease;
+        transition: opacity 200ms ease;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        }
+        .w-nav {
+        position: relative;
+        /*background: #dddddd;*/
+        z-index: 1000;
+        }
+        .w-nav:before, .w-nav:after {
+        content: " ";
+        display: table;
+        }
+        .navbarcontainer {
+        display: block;
+        margin-right: 128px;
+        margin-left: 63px;
+        float: left;
+        clear: none;
+        }
+        .w-container {
+        max-width: 940px;
+        }
+        .w-container .w-row {
+        margin-left: -10px;
+        margin-right: -10px;
+        }
+        .navbarleft {
+        float: left;
+        border-style: none;
+        border-width: 1px;
+        border-color: #000 rgba(56, 56, 56, .5) rgba(56, 56, 56, .5);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #fff;
+        box-shadow: 1px 1px 32px 0 rgba(0, 0, 0, .18);
+        -webkit-transition: background-color 200ms ease;
+        transition: background-color 200ms ease;
+        }
+        .w-nav-menu {
+        position: relative;
+        float: right;
+        }
+        .navlink {
+        padding: 13px;
+        float: none;
+        -webkit-transition: color 200ms ease;
+        transition: color 200ms ease;
+        font-family: acumin-pro, sans-serif;
+        color: #919191;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        }
+        .w-nav-link {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        text-decoration: none;
+        color: #222222;
+        padding: 20px;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .navbutton {
+        float: right;
+        }
+        .w-nav-button {
+        position: relative;
+        float: right;
+        padding: 18px;
+        font-size: 24px;
+        display: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        tap-highlight-color: rgba(0,0,0,0);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+        .w-container:after {
+        clear: both;
+        }
+        .w-container:before, .w-container:after {
+        content: " ";
+        display: table;
+        }
+        .w-nav[data-animation="over-left"] .w-nav-overlay, .w-nav[data-animation="over-left"] .w--nav-menu-open {
+        right: auto;
+        z-index: 1;
+        top: 0;
+        }
+        .w-nav[data-animation="over-left"] .w-nav-overlay {
+        width: auto;
+        }
+        .w-nav-overlay {
+        position: absolute;
+        overflow: hidden;
+        display: none;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        }
+        .w-nav-link {
+        color: #919191 !important;
+        }
+        .navlink.w--current {
+        color: #212121 !important;
+        font-size: 13px;
+        }
+        }
+        .footercontainer {
+        margin-top: 37px;
+        margin-bottom: 37px;
+        }
+        .socialicondiv.footersocial {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding: 0px;
+        float: right;
+        }
+        .w-container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 940px;
+        }
+        .w-col {
+        position: relative;
+        float: left;
+        min-height: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 50%;
+        }
+        .shortcomment.footertext {
+        display: block;
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        color: #bbb;
+        font-size: 15px;
+        }
+        @media (max-width: 991px) {
+        .navbarleft {
+        margin-top: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 5px;
+        background-color: hsla(0, 0%, 100%, .95);
+        }
+        .navbarcontainer {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        }
+        .navbutton {
+        margin-left: -20px;
+        float: left;
+        }
+        .navbutton.w--open {
+        border-radius: 5px;
+        }
+        .w-nav-link {
+        padding: 13px;
+        }
+        .socialicondiv.footersocial {
+        float: none;
+        }
+        .socialicondiv {
+        position: static;
+        display: block;
+        opacity: 1;
+        text-align: center;
+        }
+        .w-row .w-container .w-row {
+        margin-left: 0;
+        margin-right: 0;
+        }
+        .w-col {
+        width: 100%;
+        left: auto;
+        right: auto;
+        }
+        .shortcomment {
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 0px;
+        padding-left: 20px;
+        }
+        }
+        </style>
+    </head>
+    <body class="profile-page sidebar-collapse">
+        <!-- Navbar -->
+        <div class="navbar w-nav" data-animation="over-left" data-collapse="medium" data-contain="1" data-duration="400">
+            <div class="navbarcontainer w-container">
+                <nav class="navbarleft w-nav-menu" role="navigation">
+                    <a class="navlink w-nav-link w--current" href="#">Home</a>
+                    <a class="navlink w-nav-link" href="https://medium.com/@meirsnyder">Blog</a>
+                    <a class="navlink w-nav-link" href="./consulting.html">Consulting</a>
+                    <!--<div class="dropdown w-dropdown" data-delay="100" data-hover="1">
+                        <div class="navlink w-dropdown-toggle">
+                            <div class="dropdowntext">Work</div>
+                            <div class="dropdownicon w-icon-dropdown-toggle"></div>
+                        </div>
+                        <nav class="dropdownlist w-dropdown-list">
+                            <div class="dropdownnavdiv">
+                                <a class="dropdownnav w-dropdown-link" href="http://sparkumd.thisistap.com/">Consulting</a>
+                                <a class="dropdownbottom dropdownnav w-dropdown-link" href="/work/orwuu">Orwuu</a>
+                            </div>
+                        </nav>
+                    </div>
+                    -->
+                    <a class="navlink w-nav-link" href="mailto:meir@codeglomerate.com">Contact</a>
+                </nav>
+                <div class="navbutton w-nav-button">
+                    <div class="w-icon-nav-menu"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar -->
+        <div class="wrapper">
+            <div class="page-header page-header-small" filter-color="orange">
+                <div class="page-header-image" data-parallax="true" style="background-image: url('../assets/img/backgroundCPU.gif');">
+                </div>
+                <div class="container">
+                    <div class="content-center">
+                        <div class="photo-container">
+                            <img src="../assets/img/profileGA.jpg" alt="">
+                        </div>
+                        <h3 class="title">Meir Snyder</h3>
+                        <p class="category">Developer, Entrepreneur and a passionately curious person</p>
+                        <div class="content">
+                            <div class="social-description">
+                                <h2>26</h2>
+                                <p>Comments</p>
+                            </div>
+                            <div class="social-description">
+                                <h2>26</h2>
+                                <p>Comments</p>
+                            </div>
+                            <div class="social-description">
+                                <h2>48</h2>
+                                <p>Bookmarks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="button-container">
+                        <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+                        <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <h3 class="title">About me</h3>
+                    <h5 class="description">An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</h5>
+                    <div class="row">
+                        <div class="col-md-6 ml-auto mr-auto">
+                            <h4 class="title text-center">My Portfolio</h4>
+                            <div class="nav-align-center">
+                                <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#profile" role="tablist">
+                                            <i class="now-ui-icons design_image"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
+                                            <i class="now-ui-icons location_world"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#messages" role="tablist">
+                                            <i class="now-ui-icons sport_user-run"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Tab panes -->
+                        <div style="margin: auto;" class="tab-content gallery">
+                            <div class="tab-pane active" id="home" role="tabpanel">
+                                <div class="col-md-12 ml-auto mr-auto">
+                                    <div class="row collections">
+                                        <div class="col-md-6">
+                                            <div class="css-mb with-glare">
+                                                <div class="mb-display-position">
+                                                    <div class="mb-display">
+                                                        <div class="mb-screen-position">
+                                                            <div class="mb-screen">
+                                                                <!-- Image (aspect 16:10 recommended, but not required). You might also want to change or remove the background color, in case the picture is not big enough, or rendering is off  -->
+                                                                <img src="../assets/img/my_listings.png" alt="example image" />
+                                                                <!-- Image By André Freitas from unsplash.com -->
+                                                                <!-- Youtube - don't forget to remove glare -->
+                                                                <!-- <iframe width="960" height="480" src="https://www.youtube.com/embed/GUEZCxBcM78?rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=2" frameborder="0"></iframe> -->
+                                                                <!-- Notice: Youtube has some toruble with embed players and gives consol errors -->
+                                                                <!-- Iframe, simple website - don't forget to remove glare -->
+                                                                <!-- <iframe src="http://example.com" frameborder="0"></iframe> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-body"></div>
+                                                <div class="mb-bottom-cover"></div>
+                                            </div>
+                                            <!-- <img src="../assets/img/lociCrop6.gif" alt="" class="img-raised"> -->
+                                            <div style="margin: 0 auto;" class="iPhone">
+                                                <div class="iPhoneInner">
+                                                    <div class="camera"></div>
+                                                    <div class="smallTopCirc"></div>
+                                                    <div class="oval"></div>
+                                                    <div class="iScreen">
+                                                        <div class="usman">
+                                                            <img class="iphoneImg" src="../assets/img/New Stoke.gif" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="circButton"></div>
+                                                </div>
+                                            </div>
+                                            <div class="css-mb with-glare">
+                                                <div class="mb-display-position">
+                                                    <div class="mb-display">
+                                                        <div class="mb-screen-position">
+                                                            <div class="mb-screen">
+                                                                <!-- Image (aspect 16:10 recommended, but not required). You might also want to change or remove the background color, in case the picture is not big enough, or rendering is off  -->
+                                                                <img src="../assets/img/lociSocial.gif" alt="example image" />
+                                                                <!-- Image By André Freitas from unsplash.com -->
+                                                                <!-- Youtube - don't forget to remove glare -->
+                                                                <!-- <iframe width="960" height="480" src="https://www.youtube.com/embed/GUEZCxBcM78?rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=2" frameborder="0"></iframe> -->
+                                                                <!-- Notice: Youtube has some toruble with embed players and gives consol errors -->
+                                                                <!-- Iframe, simple website - don't forget to remove glare -->
+                                                                <!-- <iframe src="http://example.com" frameborder="0"></iframe> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-body"></div>
+                                                <div class="mb-bottom-cover"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="css-mb with-glare">
+                                                <div class="mb-display-position">
+                                                    <div class="mb-display">
+                                                        <div class="mb-screen-position">
+                                                            <div class="mb-screen">
+                                                                <!-- Image (aspect 16:10 recommended, but not required). You might also want to change or remove the background color, in case the picture is not big enough, or rendering is off  -->
+                                                                <img src="../assets/img/apluspromo3.jpeg" alt="example image"  />
+                                                                <!-- Image By André Freitas from unsplash.com -->
+                                                                <!-- Youtube - don't forget to remove glare -->
+                                                                <!-- <iframe width="960" height="480" src="https://www.youtube.com/embed/GUEZCxBcM78?rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=2" frameborder="0"></iframe> -->
+                                                                <!-- Notice: Youtube has some toruble with embed players and gives consol errors -->
+                                                                <!-- Iframe, simple website - don't forget to remove glare -->
+                                                                <!-- <iframe src="http://example.com" frameborder="0"></iframe> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-body"></div>
+                                                <div class="mb-bottom-cover"></div>
+                                            </div>
+                                            <div style="margin: 0 auto;" class="iPhone">
+                                                <div class="iPhoneInner">
+                                                    <div class="camera"></div>
+                                                    <div class="smallTopCirc"></div>
+                                                    <div class="oval"></div>
+                                                    <div class="iScreen">
+                                                        <div class="usman">
+                                                            <img class="iphoneImg" src="../assets/img/controlledC.gif" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="circButton"></div>
+                                                </div>
+                                            </div>
+                                            <div class="css-mb with-glare">
+                                                <div class="mb-display-position">
+                                                    <div class="mb-display">
+                                                        <div class="mb-screen-position">
+                                                            <div class="mb-screen">
+                                                                <!-- Image (aspect 16:10 recommended, but not required). You might also want to change or remove the background color, in case the picture is not big enough, or rendering is off  -->
+                                                                <img src="../assets/img/my_listings.png" alt="example image" />
+                                                                <!-- Image By André Freitas from unsplash.com -->
+                                                                <!-- Youtube - don't forget to remove glare -->
+                                                                <!-- <iframe width="960" height="480" src="https://www.youtube.com/embed/GUEZCxBcM78?rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;controls=2" frameborder="0"></iframe> -->
+                                                                <!-- Notice: Youtube has some toruble with embed players and gives consol errors -->
+                                                                <!-- Iframe, simple website - don't forget to remove glare -->
+                                                                <!-- <iframe src="http://example.com" frameborder="0"></iframe> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-body"></div>
+                                                <div class="mb-bottom-cover"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="profile" role="tabpanel">
+                                <div class="col-md-10 ml-auto mr-auto">
+                                    <div class="row collections">
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg6.jpg" class="img-raised">
+                                            <img src="../assets/img/bg11.jpg" alt="" class="img-raised">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                                            <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="messages" role="tabpanel">
+                                <div class="col-md-10 ml-auto mr-auto">
+                                    <div class="row collections">
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
+                                            <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                                            <img src="../assets/img/bg6.jpg" class="img-raised">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer footer-default">
+                <div class="footer">
+                    <div class="footercontainer w-container">
+                        <div class="w-row">
+                            <div class="w-col w-col-6">
+                                <div class="footertext shortcomment">Meir Snyder - All Rights Reserved.</div>
+                            </div>
+                            <div class="w-col w-col-6">
+                                <div class="footersocial socialicondiv">
+                                    <a class="socialiconslinkblock w-inline-block" href="http://facebook.com/meir.snyder" target="_blank"><i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a>
+                                    <a class="socialiconslinkblock w-inline-block" href="http://twitter.com/MSny_36" target="_blank"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                                    <a class="socialiconslinkblock w-inline-block" href="https://github.com/MSny" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                                    <a class="socialiconslinkblock w-inline-block" href="https://www.linkedin.com/in/meirsnyder" target="_blank"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="../assets/js/plugins/bootstrap-switch.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+    <script src="../assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+</html>
